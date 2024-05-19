@@ -33,8 +33,7 @@ function github_api_get {
 function list_users_with_read_access {
 	local endpoint="repos/${REPO_OWNER}/${REPO_NAME}/collaborators"
 
-	collaborators="$(github_api_get "$endpoint":)"
-
+	collaborators="$(github_api_get "$endpoint" | jq -r '.[] | select(.permissions.pull == true) | .login')"
 	# display the list of collaborators to repo
 
 	if [[ -z "$collaborators" ]]; then

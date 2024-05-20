@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ##########################
+#version v1:latest
 # About: listing the collaboraters of github
 # Pre-requisites: need to export username and personal access token of git
 # Author: vijay narada
